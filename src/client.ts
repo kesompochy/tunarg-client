@@ -1,10 +1,15 @@
 import ITunargProtocol from "./protocol";
 
+type actionFunction = (content?: any)=>{};
+
 export default abstract class Client{
     ws: WebSocket;
-    protected abstract _actions: {
-        [K in any]: Function;
-    };
+    private readonly _actions: {
+        [K in any]: actionFunction;
+    } = {};
+    get actions() {
+        return this._actions;
+    }
     constructor(host: string){
         const ws = new WebSocket(host);
         this.ws = ws;
@@ -13,9 +18,18 @@ export default abstract class Client{
             const json: ITunargProtocol = JSON.parse(mes.data);
 
             const type = json.type;
-            const data = json.content;
+            const content = json.content;
             
-            this._actions[type](data);
+            this._actions[type](content);
         })
+    }
+    send(type: string, content: any){
+        this.ws.send(JSON.stringify({
+            type: type,
+            content: content
+        }));
+    }
+    addAction(type: string, act: actionFunction){
+        this._actions[type] = act;
     }
 }
