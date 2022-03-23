@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+  },
+  "devDependencies": {
     "@types/node": "^17.0.22",
     "ts-loader": "^9.2.8",
     "tsc": "^2.0.4",
