@@ -8,7 +8,7 @@ export default abstract class Client{
     get actions() {
         return this._actions;
     }
-    constructor(host: string, actions: {[K in any]: Function}){
+    constructor(host: string, actions?: {[K in any]: Function}){
         const ws = new WebSocket(host);
         this.ws = ws;
 
