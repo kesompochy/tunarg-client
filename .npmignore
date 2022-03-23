@@ -4,3 +4,4 @@ node_modules
 tsconfig.json
 .vscode
 README.md
+webpack.config.js

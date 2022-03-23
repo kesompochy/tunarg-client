@@ -10,7 +10,7 @@ module.exports = {
             type: 'umd',
             umdNamedDefine: true,
         },
-        filename: "./dist/index.js"
+        filename: "./index.js"
     },
     module: {
         rules: [
