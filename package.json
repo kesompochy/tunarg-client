@@ -1,6 +1,6 @@
 {
   "name": "tunarg-client",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
@@ -11,8 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^17.0.22",
     "ts-loader": "^9.2.8",
